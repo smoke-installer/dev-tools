@@ -29,10 +29,10 @@ fn new_project(language: &String, name: &String) {
 }
 
 fn init_project(language: &String) {
-    if language == String::from("python") {
+    if language == &String::from("python") {
         let mut build_sh = fs::File::create("build.sh").unwrap();
         build_sh.write(PYTHON_BUILD);
-    } else if language == String::from("rust") {
+    } else if language == &String::from("rust") {
         let mut build_sh = fs::File::create("build.sh").unwrap();
         build_sh.write(RUST_BUILD);
     } else {
